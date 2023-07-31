@@ -1,0 +1,19 @@
+syntax = "proto3";
+package gz.msgs;
+option java_package = "com.gz.msgs";
+option java_outer_classname = "FrameVProtos";
+
+/// \ingroup gz.msgs
+/// \interface Frame_V
+/// \brief Message for a vector of frames
+
+import "gz/msgs/frame.proto";
+import "gz/msgs/header.proto";
+
+message Frame_V
+{
+  /// \brief Optional header data
+  Header header = 1;
+
+  repeated Frame frame = 2;
+}

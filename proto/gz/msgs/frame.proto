@@ -1,0 +1,33 @@
+syntax = "proto3";
+package gz.msgs;
+option java_package = "com.gz.msgs";
+option java_outer_classname = "FrameProtos";
+
+/// \ingroup gz.msgs
+/// \interface Image
+/// \brief Message for a Frame that contains a pose taged image
+
+import "gz/msgs/header.proto";
+import "gz/msgs/image.proto";
+import "gz/msgs/pose.proto";
+
+message Frame
+{
+    /// \brief Optional header data
+    Header header           = 1;
+
+    /// \brief Name of the drone model
+    string name             = 2;
+
+    /// \brief Drone id in the current simulation
+    uint32 id               = 3;
+
+    /// \brief Pose at which the image was taken
+    Pose pose               = 4;
+
+    /// \brief RGB Image
+    Image rgbImage          = 5;
+
+    /// \brief Thermal Image
+    Image thermalImage      = 6;
+}
