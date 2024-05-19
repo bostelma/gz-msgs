@@ -30,4 +30,7 @@ message Frame
 
     /// \brief Thermal Image
     Image thermalImage      = 6;
+    
+    /// \brief Depth Image
+    Image depthImage	    = 7;
 }
